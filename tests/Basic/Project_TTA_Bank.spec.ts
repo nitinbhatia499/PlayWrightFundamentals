@@ -1,7 +1,14 @@
 import{test,expect} from '@playwright/test';
+import * as allure from "allure-js-commons";
 
 test("TTA Bank Amount Transfer",async({page})=>
 {
+
+await allure.epic("TTA Bank Tests");
+await allure.description("Verify that the Amount Transfer works")
+await allure.feature("Essential features");
+await allure.story("Authentication"); 
+
     await page.goto("https://tta-bank-digital-973242068062.us-west1.run.app/");
     await page.getByRole("button",{name:'Sign Up'}).click();
     await page.getByPlaceholder('John Doe').fill("Nitin Bhatia");
